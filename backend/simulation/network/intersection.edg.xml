@@ -1,0 +1,13 @@
+<edges version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <!-- Inbound Edges to Center Traffic Light -->
+    <edge id="north2center" from="north" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="south2center" from="south" to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="east2center"  from="east"  to="center" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="west2center"  from="west"  to="center" priority="75" numLanes="2" speed="13.89"/>
+
+    <!-- Outbound Edges from Center -->
+    <edge id="center2north" from="center" to="north" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="center2south" from="center" to="south" priority="75" numLanes="2" speed="13.89"/>
+    <edge id="center2east"  from="center" to="east"  priority="75" numLanes="2" speed="13.89"/>
+    <edge id="center2west"  from="center" to="west"  priority="75" numLanes="2" speed="13.89"/>
+</edges>

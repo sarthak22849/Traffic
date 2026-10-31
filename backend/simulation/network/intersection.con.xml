@@ -1,0 +1,25 @@
+<connections version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <!-- North Inbound Connections -->
+    <connection from="north2center" to="center2west" fromLane="0" toLane="0"/>
+    <connection from="north2center" to="center2south" fromLane="0" toLane="0"/>
+    <connection from="north2center" to="center2south" fromLane="1" toLane="1"/>
+    <connection from="north2center" to="center2east" fromLane="1" toLane="1"/>
+
+    <!-- South Inbound Connections -->
+    <connection from="south2center" to="center2east" fromLane="0" toLane="0"/>
+    <connection from="south2center" to="center2north" fromLane="0" toLane="0"/>
+    <connection from="south2center" to="center2north" fromLane="1" toLane="1"/>
+    <connection from="south2center" to="center2west" fromLane="1" toLane="1"/>
+
+    <!-- East Inbound Connections -->
+    <connection from="east2center" to="center2north" fromLane="0" toLane="0"/>
+    <connection from="east2center" to="center2west" fromLane="0" toLane="0"/>
+    <connection from="east2center" to="center2west" fromLane="1" toLane="1"/>
+    <connection from="east2center" to="center2south" fromLane="1" toLane="1"/>
+
+    <!-- West Inbound Connections -->
+    <connection from="west2center" to="center2south" fromLane="0" toLane="0"/>
+    <connection from="west2center" to="center2east" fromLane="0" toLane="0"/>
+    <connection from="west2center" to="center2east" fromLane="1" toLane="1"/>
+    <connection from="west2center" to="center2north" fromLane="1" toLane="1"/>
+</connections>

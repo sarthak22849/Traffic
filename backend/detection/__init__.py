@@ -1,0 +1,1 @@
+# Crossroads AI - Detection Module

@@ -1,0 +1,39 @@
+<routes version="1.16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <!-- Vehicle Type Definitions -->
+    <vType id="car" vClass="passenger" length="4.5" maxSpeed="14.0" accel="2.6" decel="4.5" sigma="0.5" color="0,200,255"/>
+    <vType id="motorcycle" vClass="motorcycle" length="2.2" maxSpeed="16.0" accel="3.5" decel="5.0" sigma="0.5" color="74,222,128"/>
+    <vType id="bus" vClass="bus" length="12.0" maxSpeed="12.0" accel="1.5" decel="3.5" sigma="0.3" color="234,179,8"/>
+    <vType id="truck" vClass="truck" length="10.0" maxSpeed="11.0" accel="1.2" decel="3.0" sigma="0.3" color="168,85,247"/>
+    <vType id="ambulance" vClass="emergency" length="6.0" maxSpeed="20.0" accel="4.0" decel="6.0" sigma="0.1" color="255,0,0" guiShape="emergency"/>
+
+    <!-- Defined Routes -->
+    <route id="r_ns" edges="north2center center2south"/>
+    <route id="r_nw" edges="north2center center2west"/>
+    <route id="r_ne" edges="north2center center2east"/>
+
+    <route id="r_sn" edges="south2center center2north"/>
+    <route id="r_sw" edges="south2center center2west"/>
+    <route id="r_se" edges="south2center center2east"/>
+
+    <route id="r_ew" edges="east2center center2west"/>
+    <route id="r_en" edges="east2center center2north"/>
+    <route id="r_es" edges="east2center center2south"/>
+
+    <route id="r_we" edges="west2center center2east"/>
+    <route id="r_wn" edges="west2center center2north"/>
+    <route id="r_ws" edges="west2center center2south"/>
+
+    <!-- Traffic Flows (Vehicles Per Hour) -->
+    <!-- North-South Axis Flows -->
+    <flow id="flow_ns" type="car" route="r_ns" begin="0" end="3600" vehsPerHour="450" departLane="best" departSpeed="max"/>
+    <flow id="flow_ne" type="car" route="r_ne" begin="0" end="3600" vehsPerHour="120" departLane="best" departSpeed="max"/>
+    <flow id="flow_sn" type="car" route="r_sn" begin="0" end="3600" vehsPerHour="400" departLane="best" departSpeed="max"/>
+    <flow id="flow_truck_ns" type="truck" route="r_ns" begin="0" end="3600" vehsPerHour="40" departLane="best"/>
+    <flow id="flow_bus_ns" type="bus" route="r_sn" begin="0" end="3600" vehsPerHour="30" departLane="best"/>
+
+    <!-- East-West Axis Flows -->
+    <flow id="flow_ew" type="car" route="r_ew" begin="0" end="3600" vehsPerHour="380" departLane="best" departSpeed="max"/>
+    <flow id="flow_we" type="car" route="r_we" begin="0" end="3600" vehsPerHour="350" departLane="best" departSpeed="max"/>
+    <flow id="flow_bike_ew" type="motorcycle" route="r_ew" begin="0" end="3600" vehsPerHour="90" departLane="best"/>
+    <flow id="flow_truck_ew" type="truck" route="r_we" begin="0" end="3600" vehsPerHour="35" departLane="best"/>
+</routes>

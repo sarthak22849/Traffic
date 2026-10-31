@@ -1,0 +1,57 @@
+<net version="1.16" junctionCornerDetail="5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+    <location netOffset="0.00,0.00" convBoundary="-200.00,-200.00,200.00,200.00" origBoundary="-200.00,-200.00,200.00,200.00" projParameter="!"/>
+
+    <!-- Traffic Light Logic for 4-way Intersection -->
+    <tlLogic id="center" type="static" programID="0" offset="0">
+        <phase duration="30" state="GGggrrrrGGggrrrr" name="NORTH_SOUTH_GREEN"/>
+        <phase duration="3"  state="yyygrrrryyygrrrr" name="NORTH_SOUTH_YELLOW"/>
+        <phase duration="2"  state="rrrrrrrrrrrrrrrr" name="ALL_RED_CLEARANCE_1"/>
+        <phase duration="30" state="rrrrGGggrrrrGGgg" name="EAST_WEST_GREEN"/>
+        <phase duration="3"  state="rrrryyygrrrryyyg" name="EAST_WEST_YELLOW"/>
+        <phase duration="2"  state="rrrrrrrrrrrrrrrr" name="ALL_RED_CLEARANCE_2"/>
+    </tlLogic>
+
+    <!-- Inbound & Outbound Edges -->
+    <edge id="north2center" from="north" to="center" priority="75">
+        <lane id="north2center_0" index="0" speed="13.89" length="190.00" shape="1.60,200.00 1.60,10.00"/>
+        <lane id="north2center_1" index="1" speed="13.89" length="190.00" shape="4.80,200.00 4.80,10.00"/>
+    </edge>
+    <edge id="center2north" from="center" to="north" priority="75">
+        <lane id="center2north_0" index="0" speed="13.89" length="190.00" shape="-4.80,10.00 -4.80,200.00"/>
+        <lane id="center2north_1" index="1" speed="13.89" length="190.00" shape="-1.60,10.00 -1.60,200.00"/>
+    </edge>
+
+    <edge id="south2center" from="south" to="center" priority="75">
+        <lane id="south2center_0" index="0" speed="13.89" length="190.00" shape="-1.60,-200.00 -1.60,-10.00"/>
+        <lane id="south2center_1" index="1" speed="13.89" length="190.00" shape="-4.80,-200.00 -4.80,-10.00"/>
+    </edge>
+    <edge id="center2south" from="center" to="south" priority="75">
+        <lane id="center2south_0" index="0" speed="13.89" length="190.00" shape="4.80,-10.00 4.80,-200.00"/>
+        <lane id="center2south_1" index="1" speed="13.89" length="190.00" shape="1.60,-10.00 1.60,-200.00"/>
+    </edge>
+
+    <edge id="east2center" from="east" to="center" priority="75">
+        <lane id="east2center_0" index="0" speed="13.89" length="190.00" shape="200.00,-1.60 10.00,-1.60"/>
+        <lane id="east2center_1" index="1" speed="13.89" length="190.00" shape="200.00,-4.80 10.00,-4.80"/>
+    </edge>
+    <edge id="center2east" from="center" to="east" priority="75">
+        <lane id="center2east_0" index="0" speed="13.89" length="190.00" shape="10.00,4.80 200.00,4.80"/>
+        <lane id="center2east_1" index="1" speed="13.89" length="190.00" shape="10.00,1.60 200.00,1.60"/>
+    </edge>
+
+    <edge id="west2center" from="west" to="center" priority="75">
+        <lane id="west2center_0" index="0" speed="13.89" length="190.00" shape="-200.00,1.60 -10.00,1.60"/>
+        <lane id="west2center_1" index="1" speed="13.89" length="190.00" shape="-200.00,4.80 -10.00,4.80"/>
+    </edge>
+    <edge id="center2west" from="center" to="west" priority="75">
+        <lane id="center2west_0" index="0" speed="13.89" length="190.00" shape="-10.00,-4.80 -200.00,-4.80"/>
+        <lane id="center2west_1" index="1" speed="13.89" length="190.00" shape="-10.00,-1.60 -200.00,-1.60"/>
+    </edge>
+
+    <!-- Junction Nodes -->
+    <junction id="center" type="traffic_light" x="0.00" y="0.00" incLanes="north2center_0 north2center_1 south2center_0 south2center_1 east2center_0 east2center_1 west2center_0 west2center_1" intLanes="" shape="-6.40,10.00 6.40,10.00 10.00,6.40 10.00,-6.40 6.40,-10.00 -6.40,-10.00 -10.00,-6.40 -10.00,6.40"/>
+    <junction id="north" type="dead_end" x="0.00" y="200.00" incLanes="center2north_0 center2north_1" intLanes="" shape="6.40,200.00 -6.40,200.00"/>
+    <junction id="south" type="dead_end" x="0.00" y="-200.00" incLanes="center2south_0 center2south_1" intLanes="" shape="-6.40,-200.00 6.40,-200.00"/>
+    <junction id="east" type="dead_end" x="200.00" y="0.00" incLanes="center2east_0 center2east_1" intLanes="" shape="200.00,6.40 200.00,-6.40"/>
+    <junction id="west" type="dead_end" x="-200.00" y="0.00" incLanes="center2west_0 center2west_1" intLanes="" shape="-200.00,-6.40 -200.00,6.40"/>
+</net>

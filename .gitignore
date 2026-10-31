@@ -1,0 +1,48 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.env
+.venv
+
+# YOLO / ML model weights (large binary files)
+*.pt
+*.onnx
+*.engine
+
+# Uploads & processed videos (user data, large files)
+backend/uploads/
+sample_videos/real_traffic.mp4
+sample_videos/traffic_cars.mp4
+
+# SQLite databases
+*.db
+*.sqlite3
+
+# Node / Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs & temp
+*.log
+/tmp/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
